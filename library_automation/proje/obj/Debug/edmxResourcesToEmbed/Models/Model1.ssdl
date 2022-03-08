@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Kutuphane1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="adres">
+    <Key>
+      <PropertyRef Name="adres_id" />
+    </Key>
+    <Property Name="adres_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cadde" Type="varchar" MaxLength="30" />
+    <Property Name="sokak" Type="varchar" MaxLength="30" />
+    <Property Name="mahalle" Type="varchar" MaxLength="30" />
+    <Property Name="binaAd" Type="varchar" MaxLength="30" />
+    <Property Name="binaNo" Type="varchar" MaxLength="30" />
+    <Property Name="il" Type="varchar" MaxLength="30" />
+    <Property Name="ilce" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="altBaslik">
+    <Key>
+      <PropertyRef Name="alt_id" />
+    </Key>
+    <Property Name="alt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="altBaslik" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="emanet">
+    <Key>
+      <PropertyRef Name="emanet_id" />
+    </Key>
+    <Property Name="emanet_id" Type="int" Nullable="false" />
+    <Property Name="emanetTarihi" Type="datetime" Nullable="false" />
+    <Property Name="teslimTarihi" Type="datetime" Nullable="false" />
+    <Property Name="ceza" Type="float" Nullable="false" />
+    <Property Name="uye_id" Type="int" Nullable="false" />
+    <Property Name="kitap_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kitapKategori">
+    <Key>
+      <PropertyRef Name="kategori_id" />
+    </Key>
+    <Property Name="kategori_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategoriAdi" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kitaplar">
+    <Key>
+      <PropertyRef Name="kitap_id" />
+    </Key>
+    <Property Name="kitap_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kitapAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="yayinYili" Type="date" Nullable="false" />
+    <Property Name="sayfaSayisi" Type="bigint" Nullable="false" />
+    <Property Name="demirbasNo" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="yazar1" Type="varchar" MaxLength="50" />
+    <Property Name="yazar2" Type="varchar" MaxLength="50" />
+    <Property Name="yazar3" Type="varchar" MaxLength="50" />
+    <Property Name="yayinYeri" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="yayinTipi_id" Type="int" Nullable="false" />
+    <Property Name="kategori_id" Type="int" Nullable="false" />
+    <Property Name="yayinEvi_id" Type="int" Nullable="false" />
+    <Property Name="raf_id" Type="int" Nullable="false" />
+    <Property Name="ust_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kutuphane">
+    <Key>
+      <PropertyRef Name="kutuphane_id" />
+    </Key>
+    <Property Name="kutuphane_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kutuphaneAd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="adres_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="odeme">
+    <Key>
+      <PropertyRef Name="odeme_id" />
+    </Key>
+    <Property Name="odeme_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tarih" Type="datetime" Nullable="false" />
+    <Property Name="tutar" Type="float" Nullable="false" />
+    <Property Name="uye_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="raf">
+    <Key>
+      <PropertyRef Name="raf_id" />
+    </Key>
+    <Property Name="raf_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rafNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="salon_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="salon">
+    <Key>
+      <PropertyRef Name="salon_id" />
+    </Key>
+    <Property Name="salon_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="salonAd" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="kutuphane_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ustBaslik">
+    <Key>
+      <PropertyRef Name="ust_id" />
+    </Key>
+    <Property Name="ust_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ustAd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="alt_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uyeler">
+    <Key>
+      <PropertyRef Name="uye_id" />
+    </Key>
+    <Property Name="uye_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeAd" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="uyeSoyad" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tcNo" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="eposta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kullaniciAdi" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="kullaniciSifre" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="uyeTip_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uyeTip">
+    <Key>
+      <PropertyRef Name="uyeTip_id" />
+    </Key>
+    <Property Name="uyeTip_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeTipAdi" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yayinEvi">
+    <Key>
+      <PropertyRef Name="yayinEvi_id" />
+    </Key>
+    <Property Name="yayinEvi_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yayinEviAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="adres_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yayinTipi">
+    <Key>
+      <PropertyRef Name="yayinTipi_id" />
+    </Key>
+    <Property Name="yayinTipi_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yayinTipiAdi" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_emanet_kitaplar">
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="1" />
+    <End Role="emanet" Type="Self.emanet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kitaplar">
+        <PropertyRef Name="kitap_id" />
+      </Principal>
+      <Dependent Role="emanet">
+        <PropertyRef Name="kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_emanet_uyeler">
+    <End Role="uyeler" Type="Self.uyeler" Multiplicity="1" />
+    <End Role="emanet" Type="Self.emanet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uyeler">
+        <PropertyRef Name="uye_id" />
+      </Principal>
+      <Dependent Role="emanet">
+        <PropertyRef Name="uye_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kitaplar_kitapKategori">
+    <End Role="kitapKategori" Type="Self.kitapKategori" Multiplicity="1" />
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kitapKategori">
+        <PropertyRef Name="kategori_id" />
+      </Principal>
+      <Dependent Role="kitaplar">
+        <PropertyRef Name="kategori_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kitaplar_raf">
+    <End Role="raf" Type="Self.raf" Multiplicity="1" />
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="raf">
+        <PropertyRef Name="raf_id" />
+      </Principal>
+      <Dependent Role="kitaplar">
+        <PropertyRef Name="raf_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kitaplar_ustBaslik">
+    <End Role="ustBaslik" Type="Self.ustBaslik" Multiplicity="1" />
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ustBaslik">
+        <PropertyRef Name="ust_id" />
+      </Principal>
+      <Dependent Role="kitaplar">
+        <PropertyRef Name="ust_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kitaplar_yayinEvi">
+    <End Role="yayinEvi" Type="Self.yayinEvi" Multiplicity="1" />
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yayinEvi">
+        <PropertyRef Name="yayinEvi_id" />
+      </Principal>
+      <Dependent Role="kitaplar">
+        <PropertyRef Name="yayinEvi_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kitaplar_yayinTipi">
+    <End Role="yayinTipi" Type="Self.yayinTipi" Multiplicity="1" />
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="yayinTipi">
+        <PropertyRef Name="yayinTipi_id" />
+      </Principal>
+      <Dependent Role="kitaplar">
+        <PropertyRef Name="yayinTipi_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kutuphane_kutuphane">
+    <End Role="adres" Type="Self.adres" Multiplicity="1" />
+    <End Role="kutuphane" Type="Self.kutuphane" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adres">
+        <PropertyRef Name="adres_id" />
+      </Principal>
+      <Dependent Role="kutuphane">
+        <PropertyRef Name="adres_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_odeme_uyeler">
+    <End Role="uyeler" Type="Self.uyeler" Multiplicity="1" />
+    <End Role="odeme" Type="Self.odeme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uyeler">
+        <PropertyRef Name="uye_id" />
+      </Principal>
+      <Dependent Role="odeme">
+        <PropertyRef Name="uye_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_raf_salon">
+    <End Role="salon" Type="Self.salon" Multiplicity="1" />
+    <End Role="raf" Type="Self.raf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="salon">
+        <PropertyRef Name="salon_id" />
+      </Principal>
+      <Dependent Role="raf">
+        <PropertyRef Name="salon_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_salon_kutuphane">
+    <End Role="kutuphane" Type="Self.kutuphane" Multiplicity="1" />
+    <End Role="salon" Type="Self.salon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kutuphane">
+        <PropertyRef Name="kutuphane_id" />
+      </Principal>
+      <Dependent Role="salon">
+        <PropertyRef Name="kutuphane_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ustBaslik_AltBaslik">
+    <End Role="altBaslik" Type="Self.altBaslik" Multiplicity="1" />
+    <End Role="ustBaslik" Type="Self.ustBaslik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="altBaslik">
+        <PropertyRef Name="alt_id" />
+      </Principal>
+      <Dependent Role="ustBaslik">
+        <PropertyRef Name="alt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uyeler_uyeTip">
+    <End Role="uyeTip" Type="Self.uyeTip" Multiplicity="1" />
+    <End Role="uyeler" Type="Self.uyeler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uyeTip">
+        <PropertyRef Name="uyeTip_id" />
+      </Principal>
+      <Dependent Role="uyeler">
+        <PropertyRef Name="uyeTip_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_yayinEvi_adres">
+    <End Role="adres" Type="Self.adres" Multiplicity="1" />
+    <End Role="yayinEvi" Type="Self.yayinEvi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adres">
+        <PropertyRef Name="adres_id" />
+      </Principal>
+      <Dependent Role="yayinEvi">
+        <PropertyRef Name="adres_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Kutuphane1ModelStoreContainer">
+    <EntitySet Name="adres" EntityType="Self.adres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="altBaslik" EntityType="Self.altBaslik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="emanet" EntityType="Self.emanet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kitapKategori" EntityType="Self.kitapKategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kitaplar" EntityType="Self.kitaplar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kutuphane" EntityType="Self.kutuphane" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="odeme" EntityType="Self.odeme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="raf" EntityType="Self.raf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="salon" EntityType="Self.salon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ustBaslik" EntityType="Self.ustBaslik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uyeler" EntityType="Self.uyeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uyeTip" EntityType="Self.uyeTip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yayinEvi" EntityType="Self.yayinEvi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yayinTipi" EntityType="Self.yayinTipi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_emanet_kitaplar" Association="Self.FK_emanet_kitaplar">
+      <End Role="kitaplar" EntitySet="kitaplar" />
+      <End Role="emanet" EntitySet="emanet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_emanet_uyeler" Association="Self.FK_emanet_uyeler">
+      <End Role="uyeler" EntitySet="uyeler" />
+      <End Role="emanet" EntitySet="emanet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kitaplar_kitapKategori" Association="Self.FK_kitaplar_kitapKategori">
+      <End Role="kitapKategori" EntitySet="kitapKategori" />
+      <End Role="kitaplar" EntitySet="kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kitaplar_raf" Association="Self.FK_kitaplar_raf">
+      <End Role="raf" EntitySet="raf" />
+      <End Role="kitaplar" EntitySet="kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kitaplar_ustBaslik" Association="Self.FK_kitaplar_ustBaslik">
+      <End Role="ustBaslik" EntitySet="ustBaslik" />
+      <End Role="kitaplar" EntitySet="kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kitaplar_yayinEvi" Association="Self.FK_kitaplar_yayinEvi">
+      <End Role="yayinEvi" EntitySet="yayinEvi" />
+      <End Role="kitaplar" EntitySet="kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kitaplar_yayinTipi" Association="Self.FK_kitaplar_yayinTipi">
+      <End Role="yayinTipi" EntitySet="yayinTipi" />
+      <End Role="kitaplar" EntitySet="kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kutuphane_kutuphane" Association="Self.FK_kutuphane_kutuphane">
+      <End Role="adres" EntitySet="adres" />
+      <End Role="kutuphane" EntitySet="kutuphane" />
+    </AssociationSet>
+    <AssociationSet Name="FK_odeme_uyeler" Association="Self.FK_odeme_uyeler">
+      <End Role="uyeler" EntitySet="uyeler" />
+      <End Role="odeme" EntitySet="odeme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_raf_salon" Association="Self.FK_raf_salon">
+      <End Role="salon" EntitySet="salon" />
+      <End Role="raf" EntitySet="raf" />
+    </AssociationSet>
+    <AssociationSet Name="FK_salon_kutuphane" Association="Self.FK_salon_kutuphane">
+      <End Role="kutuphane" EntitySet="kutuphane" />
+      <End Role="salon" EntitySet="salon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ustBaslik_AltBaslik" Association="Self.FK_ustBaslik_AltBaslik">
+      <End Role="altBaslik" EntitySet="altBaslik" />
+      <End Role="ustBaslik" EntitySet="ustBaslik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uyeler_uyeTip" Association="Self.FK_uyeler_uyeTip">
+      <End Role="uyeTip" EntitySet="uyeTip" />
+      <End Role="uyeler" EntitySet="uyeler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_yayinEvi_adres" Association="Self.FK_yayinEvi_adres">
+      <End Role="adres" EntitySet="adres" />
+      <End Role="yayinEvi" EntitySet="yayinEvi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

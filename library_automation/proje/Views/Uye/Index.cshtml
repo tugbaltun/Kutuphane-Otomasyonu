@@ -1,0 +1,78 @@
+﻿@model IEnumerable<proje.Models.uyeler>
+
+@{
+    ViewBag.Title = "Uye";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Uye</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+ 
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.uyeAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uyeSoyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tcNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eposta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kullaniciAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kullaniciSifre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uyeTip.uyeTipAdi)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uyeAd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uyeSoyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tcNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.eposta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kullaniciAdi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kullaniciSifre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uyeTip.uyeTipAdi)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.uye_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.uye_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.uye_id })
+                </td>
+            </tr>
+        }
+
+    </table>

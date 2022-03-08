@@ -1,0 +1,42 @@
+﻿@model proje.Models.emanet
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+
+    <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.EditorFor(model => model.emanet_id)
+    @Html.EditorFor(model => model.kitap_id)
+    @Html.EditorFor(model => model.emanetTarihi)
+    @Html.EditorFor(model => model.teslimTarihi)
+    @Html.EditorFor(model => model.uye_id)
+    @*<div class="form-group">
+        <div class="col-md-10">
+
+            @string.Format("Teslim : Kitap; {0}  Kisi;{1} ", Model.kitaplar.kitapAdi, Model.uyeler.uyeAd)
+        </div>
+    </div>*@
+   
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Return" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Back to Book List", "Index", "Books")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,123 @@
+﻿@model proje.Models.kitaplar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>kitaplar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.kitapAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kitapAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yayinYili)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yayinYili)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sayfaSayisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sayfaSayisi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.demirbasNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.demirbasNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yazar1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yazar1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yazar2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yazar2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yazar3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yazar3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yayinYeri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yayinYeri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kitapKategori.kategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kitapKategori.kategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.raf.rafNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.raf.rafNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ustBaslik.ustAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ustBaslik.ustAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yayinEvi.yayinEviAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yayinEvi.yayinEviAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yayinTipi.yayinTipiAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yayinTipi.yayinTipiAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kitap_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

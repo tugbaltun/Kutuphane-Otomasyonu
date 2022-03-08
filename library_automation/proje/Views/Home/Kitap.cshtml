@@ -1,0 +1,106 @@
+﻿@model IEnumerable<proje.Models.kitaplar>
+
+@{
+    ViewBag.Title = "Kitap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kitap</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.kitapAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yayinYili)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sayfaSayisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.demirbasNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yazar1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yazar2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yazar3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yayinYeri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kitapKategori.kategoriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.raf.rafNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ustBaslik.ustBaslik1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yayinEvi.yayinEviAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yayinTipi.yayinTipiAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.kitapAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yayinYili)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sayfaSayisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.demirbasNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yazar1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yazar2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yazar3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yayinYeri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kitapKategori.kategoriAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.raf.rafNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ustBaslik.ustBaslik1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yayinEvi.yayinEviAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yayinTipi.yayinTipiAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.kitap_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.kitap_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.kitap_id })
+        </td>
+    </tr>
+}
+
+</table>

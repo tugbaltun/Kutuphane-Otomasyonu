@@ -1,0 +1,79 @@
+﻿@model proje.Models.emanet
+@{
+    ViewBag.Title = "Creat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+
+    <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*@Html.HiddenFor(model => model.kitap_id,"kitap_id")*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.emanetTarihi, "emanetTarihi", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBox("emanetTarihi", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.emanetTarihi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.teslimTarihi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.teslimTarihi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.teslimTarihi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ceza, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ceza, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ceza, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.uye_id, "uye_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("uye_id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.uye_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.kitap_id, "kitap_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBox("kitap_id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.kitap_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+    @*@Html.HiddenFor(model => model.emanetTarihi)*@
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Assign" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+
+}
+
+<script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+</script>
+<div>
+    @Html.ActionLink("Back to Book List", "Index")
+</div>
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
+

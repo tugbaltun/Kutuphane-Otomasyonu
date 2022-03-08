@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Tarama";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<label >eser Adı</label>
+<input type="text" name="eserAd" />
+<button type="submit" onclick="ara">Ara</button>
+<script >
+    function ara() {
+       @Html.ActionLink("", "Edit", new { ad= eserAd })
+    }
+</script>
+

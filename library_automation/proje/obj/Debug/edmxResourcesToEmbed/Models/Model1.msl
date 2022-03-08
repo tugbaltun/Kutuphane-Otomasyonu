@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Kutuphane1ModelStoreContainer" CdmEntityContainer="Kutuphane1Entities1">
+    <EntitySetMapping Name="adres">
+      <EntityTypeMapping TypeName="Kutuphane1Model.adres">
+        <MappingFragment StoreEntitySet="adres">
+          <ScalarProperty Name="adres_id" ColumnName="adres_id" />
+          <ScalarProperty Name="cadde" ColumnName="cadde" />
+          <ScalarProperty Name="sokak" ColumnName="sokak" />
+          <ScalarProperty Name="mahalle" ColumnName="mahalle" />
+          <ScalarProperty Name="binaAd" ColumnName="binaAd" />
+          <ScalarProperty Name="binaNo" ColumnName="binaNo" />
+          <ScalarProperty Name="il" ColumnName="il" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="altBaslik">
+      <EntityTypeMapping TypeName="Kutuphane1Model.altBaslik">
+        <MappingFragment StoreEntitySet="altBaslik">
+          <ScalarProperty Name="alt_id" ColumnName="alt_id" />
+          <ScalarProperty Name="altBaslik1" ColumnName="altBaslik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emanet">
+      <EntityTypeMapping TypeName="Kutuphane1Model.emanet">
+        <MappingFragment StoreEntitySet="emanet">
+          <ScalarProperty Name="emanet_id" ColumnName="emanet_id" />
+          <ScalarProperty Name="emanetTarihi" ColumnName="emanetTarihi" />
+          <ScalarProperty Name="teslimTarihi" ColumnName="teslimTarihi" />
+          <ScalarProperty Name="ceza" ColumnName="ceza" />
+          <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+          <ScalarProperty Name="kitap_id" ColumnName="kitap_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kitapKategori">
+      <EntityTypeMapping TypeName="Kutuphane1Model.kitapKategori">
+        <MappingFragment StoreEntitySet="kitapKategori">
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="kategoriAdi" ColumnName="kategoriAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kitaplar">
+      <EntityTypeMapping TypeName="Kutuphane1Model.kitaplar">
+        <MappingFragment StoreEntitySet="kitaplar">
+          <ScalarProperty Name="kitap_id" ColumnName="kitap_id" />
+          <ScalarProperty Name="kitapAdi" ColumnName="kitapAdi" />
+          <ScalarProperty Name="yayinYili" ColumnName="yayinYili" />
+          <ScalarProperty Name="sayfaSayisi" ColumnName="sayfaSayisi" />
+          <ScalarProperty Name="demirbasNo" ColumnName="demirbasNo" />
+          <ScalarProperty Name="yazar1" ColumnName="yazar1" />
+          <ScalarProperty Name="yazar2" ColumnName="yazar2" />
+          <ScalarProperty Name="yazar3" ColumnName="yazar3" />
+          <ScalarProperty Name="yayinYeri" ColumnName="yayinYeri" />
+          <ScalarProperty Name="yayinTipi_id" ColumnName="yayinTipi_id" />
+          <ScalarProperty Name="kategori_id" ColumnName="kategori_id" />
+          <ScalarProperty Name="yayinEvi_id" ColumnName="yayinEvi_id" />
+          <ScalarProperty Name="raf_id" ColumnName="raf_id" />
+          <ScalarProperty Name="ust_id" ColumnName="ust_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kutuphane">
+      <EntityTypeMapping TypeName="Kutuphane1Model.kutuphane">
+        <MappingFragment StoreEntitySet="kutuphane">
+          <ScalarProperty Name="kutuphane_id" ColumnName="kutuphane_id" />
+          <ScalarProperty Name="kutuphaneAd" ColumnName="kutuphaneAd" />
+          <ScalarProperty Name="adres_id" ColumnName="adres_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="odeme">
+      <EntityTypeMapping TypeName="Kutuphane1Model.odeme">
+        <MappingFragment StoreEntitySet="odeme">
+          <ScalarProperty Name="odeme_id" ColumnName="odeme_id" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="raf">
+      <EntityTypeMapping TypeName="Kutuphane1Model.raf">
+        <MappingFragment StoreEntitySet="raf">
+          <ScalarProperty Name="raf_id" ColumnName="raf_id" />
+          <ScalarProperty Name="rafNo" ColumnName="rafNo" />
+          <ScalarProperty Name="salon_id" ColumnName="salon_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salon">
+      <EntityTypeMapping TypeName="Kutuphane1Model.salon">
+        <MappingFragment StoreEntitySet="salon">
+          <ScalarProperty Name="salon_id" ColumnName="salon_id" />
+          <ScalarProperty Name="salonAd" ColumnName="salonAd" />
+          <ScalarProperty Name="kutuphane_id" ColumnName="kutuphane_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Kutuphane1Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ustBaslik">
+      <EntityTypeMapping TypeName="Kutuphane1Model.ustBaslik">
+        <MappingFragment StoreEntitySet="ustBaslik">
+          <ScalarProperty Name="ust_id" ColumnName="ust_id" />
+          <ScalarProperty Name="ustAd" ColumnName="ustAd" />
+          <ScalarProperty Name="alt_id" ColumnName="alt_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uyeler">
+      <EntityTypeMapping TypeName="Kutuphane1Model.uyeler">
+        <MappingFragment StoreEntitySet="uyeler">
+          <ScalarProperty Name="uye_id" ColumnName="uye_id" />
+          <ScalarProperty Name="uyeAd" ColumnName="uyeAd" />
+          <ScalarProperty Name="uyeSoyad" ColumnName="uyeSoyad" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+          <ScalarProperty Name="eposta" ColumnName="eposta" />
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="kullaniciSifre" ColumnName="kullaniciSifre" />
+          <ScalarProperty Name="uyeTip_id" ColumnName="uyeTip_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uyeTip">
+      <EntityTypeMapping TypeName="Kutuphane1Model.uyeTip">
+        <MappingFragment StoreEntitySet="uyeTip">
+          <ScalarProperty Name="uyeTip_id" ColumnName="uyeTip_id" />
+          <ScalarProperty Name="uyeTipAdi" ColumnName="uyeTipAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yayinEvi">
+      <EntityTypeMapping TypeName="Kutuphane1Model.yayinEvi">
+        <MappingFragment StoreEntitySet="yayinEvi">
+          <ScalarProperty Name="yayinEvi_id" ColumnName="yayinEvi_id" />
+          <ScalarProperty Name="yayinEviAdi" ColumnName="yayinEviAdi" />
+          <ScalarProperty Name="adres_id" ColumnName="adres_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yayinTipi">
+      <EntityTypeMapping TypeName="Kutuphane1Model.yayinTipi">
+        <MappingFragment StoreEntitySet="yayinTipi">
+          <ScalarProperty Name="yayinTipi_id" ColumnName="yayinTipi_id" />
+          <ScalarProperty Name="yayinTipiAdi" ColumnName="yayinTipiAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<proje.Models.emanet>
+
+@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.emanetTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teslimTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ceza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kitaplar.kitapAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uyeler.uyeAd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.emanetTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.teslimTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ceza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kitaplar.kitapAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uyeler.uyeAd)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.emanet_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.emanet_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.emanet_id })
+        </td>
+    </tr>
+}
+
+</table>
